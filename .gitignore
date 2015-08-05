@@ -1,0 +1,12 @@
+typings/
+node_modules/
+.settings/
+utils/*.js
+routes/*.js
+config/*.js
+bin/*.js
+public/app.js
+public/services/*.js
+public/vo/*.js
+app.js
+*.log

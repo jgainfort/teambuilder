@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "watch": true,
+        "module": "commonjs",
+        "target": "es5"
+    },
+    "files": [
+        "app.ts",
+        "routes/index.ts",
+        "routes/api/champions.ts",
+        "utils/Socket.ts",
+        "config/vo/ChampionTypesVO.ts",
+        "config/vo/RegionsVO.ts",
+        "public/js/app.ts",
+        "public/js/services/SocketService.ts",
+        "public/js/services/ChampionService.ts",
+        "public/js/vo/RegionsVO.ts",
+        "bin/www.ts",
+        "typings/tsd.d.ts"
+    ]
+}

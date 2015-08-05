@@ -1,0 +1,12 @@
+{
+	"baseUrl" : "https://{region}.api.pvp.net",
+	"key_param": "?api_key=",
+	"key": "dee0ab01-7889-4a70-aaa2-0d44530f6ea2",
+	"paths": {
+		"champion": {
+			"getAll": "/api/lol/static-data/{region}/v1.2/champion",
+			"getById": "/api/lol/static-data/{region}/v1.2/champion/{id}",
+			"params": "&champData=recommended"
+		}
+	}
+}
