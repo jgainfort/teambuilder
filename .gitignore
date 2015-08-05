@@ -2,7 +2,7 @@ typings/
 node_modules/
 .settings/
 utils/*.js
-routes/*.js
+routes/**/*.js
 config/*.js
 bin/*.js
 public/app.js
