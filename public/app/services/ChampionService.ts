@@ -1,8 +1,8 @@
 // Import
-import {SocketService} from 'js/services/SocketService';
-import {ChampionTypes} from 'js/vo/ChampionTypesVO';
-import {Regions} from 'js/vo/RegionsVO';
-import {Utils} from 'js/utils/Utils';
+import {SocketService} from 'app/services/SocketService';
+import {ChampionTypes} from 'app/vo/ChampionTypesVO';
+import {Regions} from 'app/vo/RegionsVO';
+import {Utils} from 'app/utils/Utils';
 
 export class ChampionService {
 	socketSvc:SocketService;

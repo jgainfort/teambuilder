@@ -5,8 +5,10 @@ utils/*.js
 routes/**/*.js
 config/*.js
 bin/*.js
-public/app.js
-public/services/*.js
-public/vo/*.js
+public/app/app.js
+public/app/services/*.js
+public/app/vo/*.js
+public/app/components/*.js
+public/app//utils/*.js
 app.js
 *.log

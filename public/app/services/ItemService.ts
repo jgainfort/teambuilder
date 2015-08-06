@@ -1,8 +1,8 @@
 // Import
-import {SocketService} from 'js/services/SocketService';
-import {ItemTypes} from 'js/vo/ItemTypesVO';
-import {Regions} from 'js/vo/RegionsVO';
-import {Utils} from 'js/utils/Utils';
+import {SocketService} from 'app/services/SocketService';
+import {ItemTypes} from 'app/vo/ItemTypesVO';
+import {Regions} from 'app/vo/RegionsVO';
+import {Utils} from 'app/utils/Utils';
 
 export class ItemService {
 	socketSvc:SocketService;
