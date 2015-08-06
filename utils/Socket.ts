@@ -33,11 +33,11 @@ class Socket {
 	initListeners() {
 		var self = this;
 		 self.socket.on('connection', function(socket) {
-			 debug('User connected: ID = ', socket.id);
+			 debug('User connected: ID = ' + socket.id);
 			 
 			 socket.on('message', function(message) {
 				var msg = JSON.parse(message);
-				debug('Message received. Type: ', msg.type);
+				debug('Message received. Type: ' + msg.type);
 				
 				switch (msg.type) {
 					case self.championTypes.GET_ALL_CHAMPIONS:
