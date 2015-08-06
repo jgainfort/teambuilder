@@ -6,7 +6,12 @@
 		"champion": {
 			"getAll": "/api/lol/static-data/{region}/v1.2/champion",
 			"getById": "/api/lol/static-data/{region}/v1.2/champion/{id}",
-			"params": "&champData=recommended"
+			"params": "&champData=all"
+		},
+		"item": {
+			"getAll": "/api/lol/static-data/{region}/v1.2/item",
+			"getById": "/api/lol/static-data/{region}/v1.2/item/{id}",
+			"params": "&itemListData=all"
 		}
 	}
 }

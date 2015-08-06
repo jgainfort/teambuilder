@@ -2,17 +2,20 @@
 import {SocketService} from 'js/services/SocketService';
 import {ChampionTypes} from 'js/vo/ChampionTypesVO';
 import {Regions} from 'js/vo/RegionsVO';
+import {Utils} from 'js/utils/Utils';
 
 export class ChampionService {
 	socketSvc:SocketService;
 	championTypes:ChampionTypes;
 	regions:Regions;
+	utils:Utils;
 	champions:Object;
 	 
 	constructor() {
 		this.socketSvc = new SocketService();
 		this.championTypes = new ChampionTypes();
 		this.regions = new Regions();
+		this.utils = new Utils();
 	}
 	 
 	setChampions(scope:any, onSuccess:Function, onError:Function) {
@@ -20,19 +23,11 @@ export class ChampionService {
 			if (data.error) {
 				onError(scope, data.error);
 			} else {
-				this.champions = this.convertToList(data.data);
+				this.champions = this.utils.convertToList(data.data);
 				onSuccess(scope, this.champions);
 			}
 		});
 	}
-	
-	convertToList(data:Object) {
-		var list:Array<Object> = [];
-		for (var item in data) {
-			list.push(data[item]);	
-		}
-		return list;
-	}	
  }
 
 

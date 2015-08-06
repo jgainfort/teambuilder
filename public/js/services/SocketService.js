@@ -8,11 +8,13 @@ var SocketService = (function () {
         this.socket.send(JSON.stringify({ type: type, data: data }));
         this.socket.on('message', function (message) {
             var msg = JSON.parse(message);
-            if (msg.error) {
-                callback(msg.error);
-            }
-            else {
-                callback(msg.data);
+            if (msg.type === (type + '::success') || msg.type === (type + '::error')) {
+                if (msg.error) {
+                    callback(msg.error);
+                }
+                else {
+                    callback(msg.data);
+                }
             }
         });
     };
