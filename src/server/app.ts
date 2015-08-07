@@ -4,11 +4,9 @@ import express = require('express');
 import path = require('path');
 import favicon = require('serve-favicon');
 import logger = require('morgan');
-import debugModule = require('debug');
 import cookieParser = require('cookie-parser');
 import bodyParser = require('body-parser');
 
-var debug = debugModule('teambuilder:app');
 
 // Routing
 import routes = require('./routes/index');
