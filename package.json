@@ -4,7 +4,7 @@
   "description": "League of Legends Team Builder and Team Comparison",
   "main": "app.js",
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./src/server/bin/www"
   },
   "keywords": [
     "league of legends",
@@ -32,10 +32,18 @@
     "path": "^0.11.14",
     "serve-favicon": "^2.3.0",
     "socket.io": "^1.3.6",
+    "systemjs": "^0.18.8",
+    "traceur": "0.0.91",
     "typescript-require": "^0.2.9"
   },
   "devDependencies": {
-    "gulp": "^3.9.0"
+    "del": "^1.2.0",
+    "gulp": "^3.9.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-size": "^1.2.3",
+    "gulp-traceur": "^0.17.1",
+    "systemjs-builder": "^0.13.0"
   },
   "bin": {
     "lol-team-builder": "www.js"
