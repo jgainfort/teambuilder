@@ -1,9 +1,11 @@
 var gulp = require('gulp');
-var server = require('gulp-express');
+var tslint = require('gulp-tslint');
 var config = require('./gulpfile.config')();
 
-gulp.task('server', function() {
-	server.run([config.serverStart]);
-})
+gulp.task('tslint', function() {
+	return gulp.src(config.paths.scripts)
+		.pipe(tslint(config.tslintOptions))
+		.pipe(tslint.report('verbose'));
+});
 
-gulp.task('default', ['server']);
+gulp.task('default', ['tslint']);

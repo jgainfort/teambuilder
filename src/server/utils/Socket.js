@@ -7,15 +7,14 @@ var debug = debugModule('teambuilder:socket');
 var champions = require('../routes/api/champions');
 var items = require('../routes/api/items');
 var Socket = (function () {
-    function Socket(server, engine) {
-        this.server = server;
-        this.engine = engine;
+    function Socket() {
         this.regions = new Regions();
         this.championTypes = new ChampionTypes();
         this.itemTypes = new ItemTypes();
-        this.initSocketServer();
     }
-    Socket.prototype.initSocketServer = function () {
+    Socket.prototype.init = function (server, engine) {
+        this.server = server;
+        this.engine = engine;
         this.socket = this.engine.attach(this.server);
         this.initListeners();
     };

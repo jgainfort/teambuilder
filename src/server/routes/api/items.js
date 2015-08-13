@@ -1,9 +1,8 @@
 /// <referencd path="../../../../typings/tsd.d.ts" />
-var debugModule = require('debug');
 var requests = require('../../utils/requests');
 var config = require('../../config/config');
-var debug = debugModule('teambuilder:items');
 function getAllItems(region, callback) {
+    'use strict';
     var url = [config.baseUrl, config.paths.item.getAll, config.key_param, config.key, config.paths.item.params].join('');
     var regex = /{region}/gi;
     var modUrl = url.replace(regex, region);
@@ -22,6 +21,3 @@ function getAllItems(region, callback) {
     });
 }
 exports.getAllItems = getAllItems;
-function getItemById(regions, id, callback) {
-}
-exports.getItemById = getItemById;

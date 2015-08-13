@@ -1,4 +1,3 @@
-// Import
 var SocketService_1 = require('app/services/SocketService');
 var ItemTypesVO_1 = require('app/vo/ItemTypesVO');
 var RegionsVO_1 = require('app/vo/RegionsVO');

@@ -16,22 +16,17 @@ var ChampionsComponent = (function () {
     function ChampionsComponent(championSvc, zone) {
         this.championSvc = championSvc;
         this.zone = zone;
-        this.championSvc.setChampions(this, this.onSetChampionsSuccess, this.onSetChampionsError);
+        this.championSvc.setChampions(this.onSetChampionsSuccess, this.onSetChampionsError);
     }
-    ChampionsComponent.prototype.onInit = function () {
-        this.championSvc.setChampions(this, this.onSetChampionsSuccess, this.onSetChampionsError);
+    ChampionsComponent.prototype.onSetChampionsSuccess = function (data) {
+        console.log('Retreived champion data: Data = ', data);
     };
-    ChampionsComponent.prototype.onSetChampionsSuccess = function (self, data) {
-        self.zone.run(function () {
-            self.champions = data;
-        });
-    };
-    ChampionsComponent.prototype.onSetChampionsError = function (self, error) {
+    ChampionsComponent.prototype.onSetChampionsError = function (error) {
         console.error('Error retreiving champion data: Error = ', error);
     };
     ChampionsComponent = __decorate([
         angular2_1.Component({
-            selector: 'champions',
+            selector: 'champions'
         }),
         angular2_1.View({
             templateUrl: 'app/components/champions/champions.html',

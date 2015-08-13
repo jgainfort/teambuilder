@@ -30,7 +30,7 @@ var ItemsComponent = (function () {
     };
     ItemsComponent = __decorate([
         angular2_1.Component({
-            selector: 'items',
+            selector: 'items'
         }),
         angular2_1.View({
             templateUrl: 'app/components/items/items.html',

@@ -1,7 +1,8 @@
 /// <reference path="../../../typings/tsd.d.ts" />
+'use strict';
 require('typescript-require');
 /**
- * Module dependecies
+ * module dependecies
  */
 var app = require('../app');
 var debugModule = require('debug');
@@ -10,40 +11,43 @@ var Socket = require('../utils/Socket');
 var debug = debugModule('teambuilder:server');
 var engine = require('engine.io');
 /**
- * Get port from environment and store it in Express
+ * get port from environment and store it in Express
  */
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 /**
- * Create HTTP server
+ * create HTTP server
  */
 var server = http.createServer(app);
 /**
- * Listen on provided port, on all network interfaces.
+ * listen on provided port, on all network interfaces.
  */
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 /**
- * Init engine.io
+ * init engine.io
  */
-var socketServer = new Socket(server, engine);
+var socketServer = new Socket();
+socketServer.init(server, engine);
 function normalizePort(val) {
-    var port = parseInt(val, 10);
-    if (isNaN(port)) {
+    'use strict';
+    var p = parseInt(val, 10);
+    if (isNaN(p)) {
         // named pipe
         return val;
     }
-    if (port >= 0) {
+    if (p >= 0) {
         // port number
-        return port;
+        return p;
     }
     return false;
 }
 /**
- * Event listener for HTTP server "error" event.
+ * event listener for HTTP server "error" event.
  */
 function onError(error) {
+    'use strict';
     if (error.syscall !== 'listen') {
         throw error;
     }
@@ -63,9 +67,10 @@ function onError(error) {
     }
 }
 /**
- * Event listener for HTTP server "listening" event.
+ * event listener for HTTP server "listening" event.
  */
 function onListening() {
+    'use strict';
     var addr = server.address();
     var bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
     debug('Listening on ' + bind);

@@ -7,7 +7,10 @@ module.exports = function() {
 		'bower_components/angular2/angular.min.js',
 		'bower_components/engine.io.js'
 	];
-	var lib = './src/client/app/libs';
+	var paths = {
+		libs: '',
+		scripts: 'src/**/*.ts'
+	}
 	
 	var config = {
 		client: client,
@@ -16,11 +19,11 @@ module.exports = function() {
 		html: client + 'index.html',
 		prodHtml: client + 'index.prod.html',
 		bowerLibs: bowerLibs,
-		lib: lib
+		paths: paths,
 	}
 	
 	/**
-	 * Inject options
+	 * inject options
 	 */
 	 config.getInjectOptions = function() {
 		 var options = {

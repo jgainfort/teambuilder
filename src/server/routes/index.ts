@@ -1,12 +1,11 @@
 /// <reference path="../../../typings/tsd.d.ts" />
 
 import express = require('express');
-import debugModule = require('debug');
-var router = express.Router();
+var router: express.Router = express.Router();
 
 /* GET home page */
-router.get('/', function(req, res, next) {
-	res.sendFile('index.html');
+router.get('/', function(req: express.Request, res: express.Response, next: any): void {
+    res.sendFile('index.html');
 });
 
 export = router;

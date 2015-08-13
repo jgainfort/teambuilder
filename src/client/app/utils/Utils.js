@@ -4,7 +4,9 @@ var Utils = (function () {
     Utils.prototype.convertToList = function (data) {
         var list = [];
         for (var item in data) {
-            list.push(data[item]);
+            if (data.hasOwnProperty(item)) {
+                list.push(data[item]);
+            }
         }
         return list;
     };
