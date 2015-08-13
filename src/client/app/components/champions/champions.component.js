@@ -16,6 +16,7 @@ var ChampionsComponent = (function () {
     function ChampionsComponent(championSvc, zone) {
         this.championSvc = championSvc;
         this.zone = zone;
+        this.championSvc.setChampions(this, this.onSetChampionsSuccess, this.onSetChampionsError);
     }
     ChampionsComponent.prototype.onInit = function () {
         this.championSvc.setChampions(this, this.onSetChampionsSuccess, this.onSetChampionsError);
@@ -31,7 +32,6 @@ var ChampionsComponent = (function () {
     ChampionsComponent = __decorate([
         angular2_1.Component({
             selector: 'champions',
-            viewInjector: [ChampionService_1.ChampionService]
         }),
         angular2_1.View({
             templateUrl: 'app/components/champions/champions.html',

@@ -31,7 +31,6 @@ var ItemsComponent = (function () {
     ItemsComponent = __decorate([
         angular2_1.Component({
             selector: 'items',
-            viewInjector: [ItemService_1.ItemService]
         }),
         angular2_1.View({
             templateUrl: 'app/components/items/items.html',

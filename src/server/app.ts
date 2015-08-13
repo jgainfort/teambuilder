@@ -15,7 +15,7 @@ var app = express();
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static('./src/client/'));
 
@@ -35,7 +35,7 @@ app.use((req, res, next) => {
 // Development error handler
 // Will print stacktrace
 if (app.get('env') === 'development') {
-	app.use((err: any, req ,res, next) => {
+	app.use((err: any, req, res, next) => {
 		res.status(err['status'] || 500);
 		res.json({
 			message: err.message,

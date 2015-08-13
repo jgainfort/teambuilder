@@ -4,6 +4,7 @@ var socket = new eio.Socket({host: 'localhost', port: 3000});
 
 export class SocketService {
 	socket:any;	
+	
 	constructor() {
 		this.socket = socket;
 		this.initListeners();

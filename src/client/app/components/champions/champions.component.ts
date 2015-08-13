@@ -5,7 +5,6 @@ import {ChampionService} from 'app/services/ChampionService';
 
 @Component({
 	selector: 'champions',
-	viewInjector: [ChampionService]
 })
 @View({
 	templateUrl: 'app/components/champions/champions.html',
@@ -20,6 +19,8 @@ export class ChampionsComponent {
 	constructor(championSvc:ChampionService, zone:NgZone) {
 		this.championSvc = championSvc;
 		this.zone = zone;
+		
+		this.championSvc.setChampions(this, this.onSetChampionsSuccess, this.onSetChampionsError);
 	}
 	
 	onInit() {

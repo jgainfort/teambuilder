@@ -23,7 +23,6 @@
         "src/client/app/vo/RegionsVO.ts",
         "src/client/app/vo/ItemTypesVO.ts",
         "src/client/app/vo/ChampionTypesVO.ts",
-        "src/server/bin/www.ts",
-        "typings/tsd.d.ts"
+        "src/server/bin/www.ts"
     ]
 }

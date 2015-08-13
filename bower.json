@@ -1,0 +1,37 @@
+{
+  "name": "teambuilder",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jgainfort/teambuilder",
+  "authors": [
+    "John Gainfort <john.gainfort@realeyes.com>"
+  ],
+  "description": "League of Legends Team Builder and Team Comparison",
+  "main": "app.js",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "LeagueOfLengends",
+    "riot",
+    "teambuilder",
+    "angular2",
+    "typescript",
+    "express",
+    "nodejs"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "engine.io-client": "~1.5.2",
+    "angular2": "~1.4.3",
+    "systemjs": "*",
+    "traceur-runtime": "~0.0.91"
+  }
+}

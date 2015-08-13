@@ -5,7 +5,6 @@ import {ItemService} from 'app/services/ItemService';
 
 @Component({
 	selector: 'items',
-	viewInjector: [ItemService]
 })
 @View({
 	templateUrl: 'app/components/items/items.html',
