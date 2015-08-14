@@ -4,7 +4,8 @@ import {Component, View, NgFor, NgZone} from 'angular2/angular2';
 import {ItemService} from 'app/services/ItemService';
 
 @Component({
-    selector: 'items'
+    selector: 'items',
+    viewInjector: [ItemService]
 })
 @View({
     templateUrl: 'app/components/items/items.html',
@@ -19,19 +20,17 @@ export class ItemsComponent {
     constructor(itemSvc: ItemService, zone: NgZone) {
         this.itemSvc = itemSvc;
         this.zone = zone;
+
+        this.itemSvc.setItems(this.onSetItemsSuccess, this.onSetItemsError);
     }
 
-    onInit(): void {
-        this.itemSvc.setItems(this, this.onSetItemsSuccess, this.onSetItemsError);
-    }
-
-    onSetItemsSuccess(self: any, data: Array<Object>): void {
-        self.zone.run(() => {
-            self.items = data;
+    public onSetItemsSuccess: Function = (data: Array<Object>): void => {
+        this.zone.run(() => {
+            this.items = data;
         });
-    }
+    };
 
-    onSetItemsError(self: any, error: string): void {
+    public onSetItemsError: Function = (error: string): void => {
         console.error('Error retreiving items data: Error = ', error);
-    }
+    };
 }

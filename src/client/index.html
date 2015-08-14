@@ -1,28 +1,21 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>LOL Team Builder</title>
-	</head>
-	<body>
-		<h1>Welcome to League of Legends Team Builder</h1>
-		<lol-team-builder>Loading...</lol-team-builder>
-		
-        <!-- inject:js -->
-        <script src="/src/client/app/libs/angular.min.js"></script>
-        <script src="/src/client/app/libs/engine.io.js"></script>
-        <script src="/src/client/app/libs/system.min.js"></script>
-        <script src="/src/client/app/libs/traceur-runtime.min.js"></script>
-        <!-- endinject -->
 
-		<script>
-			System.config({
-				traceurOptions: {
-					annotation: true,
-					memberVariables: true,
-					types: true
-				}
-			});
-			System.import('app/app');
-		</script>
-	</body>
+<head>
+    <title>LOL Team Builder</title>
+    <script src="jspm_packages/system.js"></script>
+    <script src="config.js"></script>
+</head>
+
+<body>
+    <h1>Welcome</h1>
+    <lol-team-builder>Loading...</lol-team-builder>
+    
+    <script src="app/libs/engine.io.js"></script>
+
+    <script>
+        System.import('app/app');
+    </script>
+</body>
+
 </html>

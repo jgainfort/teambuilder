@@ -9,15 +9,15 @@ var ItemService = (function () {
         this.regions = new RegionsVO_1.Regions();
         this.utils = new Utils_1.Utils();
     }
-    ItemService.prototype.setItems = function (scope, onItemsSuccess, onItemsError) {
+    ItemService.prototype.setItems = function (onItemsSuccess, onItemsError) {
         var _this = this;
         this.socketSvc.emit(this.itemTypes.GET_ALL_ITEMS, { region: this.regions.NA }, function (data) {
             if (data.error) {
-                onItemsError(scope, data.error);
+                onItemsError(data.error);
             }
             else {
                 _this.items = _this.utils.convertToList(data.data);
-                onItemsSuccess(scope, _this.items);
+                onItemsSuccess(_this.items);
             }
         });
     };

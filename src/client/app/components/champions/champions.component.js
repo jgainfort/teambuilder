@@ -14,19 +14,23 @@ var angular2_1 = require('angular2/angular2');
 var ChampionService_1 = require('app/services/ChampionService');
 var ChampionsComponent = (function () {
     function ChampionsComponent(championSvc, zone) {
+        var _this = this;
+        this.onSetChampionsSuccess = function (data) {
+            _this.zone.run(function () {
+                _this.champions = data;
+            });
+        };
+        this.onSetChampionsError = function (error) {
+            console.error('Error retreiving champion data: Error = ', error);
+        };
         this.championSvc = championSvc;
         this.zone = zone;
         this.championSvc.setChampions(this.onSetChampionsSuccess, this.onSetChampionsError);
     }
-    ChampionsComponent.prototype.onSetChampionsSuccess = function (data) {
-        console.log('Retreived champion data: Data = ', data);
-    };
-    ChampionsComponent.prototype.onSetChampionsError = function (error) {
-        console.error('Error retreiving champion data: Error = ', error);
-    };
     ChampionsComponent = __decorate([
         angular2_1.Component({
-            selector: 'champions'
+            selector: 'champions',
+            viewInjector: [ChampionService_1.ChampionService]
         }),
         angular2_1.View({
             templateUrl: 'app/components/champions/champions.html',

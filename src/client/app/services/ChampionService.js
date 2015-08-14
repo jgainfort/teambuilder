@@ -21,9 +21,6 @@ var ChampionService = (function () {
             }
         });
     };
-    ChampionService.prototype.getChampions = function () {
-        return this.champions;
-    };
     return ChampionService;
 })();
 exports.ChampionService = ChampionService;

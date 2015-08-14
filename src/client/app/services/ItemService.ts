@@ -17,13 +17,13 @@ export class ItemService {
         this.utils = new Utils();
     }
 
-    setItems(scope: any, onItemsSuccess: Function, onItemsError: Function): void {
+    setItems(onItemsSuccess: Function, onItemsError: Function): void {
         this.socketSvc.emit(this.itemTypes.GET_ALL_ITEMS, { region: this.regions.NA }, (data: any) => {
             if (data.error) {
-                onItemsError(scope, data.error);
+                onItemsError(data.error);
             } else {
                 this.items = this.utils.convertToList(data.data);
-                onItemsSuccess(scope, this.items);
+                onItemsSuccess(this.items);
             }
         });
     }

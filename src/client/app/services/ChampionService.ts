@@ -27,8 +27,4 @@ export class ChampionService {
             }
         });
     }
-
-    getChampions(): Array<Object> {
-        return this.champions;
-    }
 }

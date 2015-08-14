@@ -4,7 +4,8 @@ import {Component, View, NgFor, NgZone} from 'angular2/angular2';
 import {ChampionService} from 'app/services/ChampionService';
 
 @Component({
-    selector: 'champions'
+    selector: 'champions',
+    viewInjector: [ChampionService]
 })
 @View({
     templateUrl: 'app/components/champions/champions.html',
@@ -23,11 +24,13 @@ export class ChampionsComponent {
         this.championSvc.setChampions(this.onSetChampionsSuccess, this.onSetChampionsError);
     }
 
-    onSetChampionsSuccess(data: Array<Object>): void {
-        console.log('Retreived champion data: Data = ', data);
-    }
+    onSetChampionsSuccess: Function = (data: Array<Object>) => {
+        this.zone.run(() => {
+            this.champions = data;
+        });
+    };
 
-    onSetChampionsError(error: string): void {
+    onSetChampionsError: Function = (error: string) => {
         console.error('Error retreiving champion data: Error = ', error);
-    }
+    };
 }

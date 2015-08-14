@@ -14,23 +14,23 @@ var angular2_1 = require('angular2/angular2');
 var ItemService_1 = require('app/services/ItemService');
 var ItemsComponent = (function () {
     function ItemsComponent(itemSvc, zone) {
+        var _this = this;
+        this.onSetItemsSuccess = function (data) {
+            _this.zone.run(function () {
+                _this.items = data;
+            });
+        };
+        this.onSetItemsError = function (error) {
+            console.error('Error retreiving items data: Error = ', error);
+        };
         this.itemSvc = itemSvc;
         this.zone = zone;
+        this.itemSvc.setItems(this.onSetItemsSuccess, this.onSetItemsError);
     }
-    ItemsComponent.prototype.onInit = function () {
-        this.itemSvc.setItems(this, this.onSetItemsSuccess, this.onSetItemsError);
-    };
-    ItemsComponent.prototype.onSetItemsSuccess = function (self, data) {
-        self.zone.run(function () {
-            self.items = data;
-        });
-    };
-    ItemsComponent.prototype.onSetItemsError = function (self, error) {
-        console.error('Error retreiving items data: Error = ', error);
-    };
     ItemsComponent = __decorate([
         angular2_1.Component({
-            selector: 'items'
+            selector: 'items',
+            viewInjector: [ItemService_1.ItemService]
         }),
         angular2_1.View({
             templateUrl: 'app/components/items/items.html',

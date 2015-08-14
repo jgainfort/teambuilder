@@ -6,10 +6,8 @@ utils/*.js
 routes/**/*.js
 config/*.js
 bin/*.js
-public/app/app.js
-public/app/services/*.js
-public/app/vo/*.js
-public/app/components/*.js
-public/app//utils/*.js
+src/**/*.js
+!src/client/config.js
 app.js
+src/client/jspm_packages
 *.log
