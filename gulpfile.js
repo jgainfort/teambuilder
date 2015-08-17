@@ -1,11 +1,11 @@
-var gulp: any = require('gulp');
-var tslint: any = require('gulp-tslint');
-var shell: any = require('gulp-shell');
-var gulpCopy: any = require('gulp-copy');
-var minifyHtml: any = require('gulp-minify-html');
-var runseq: any = require('run-sequence');
-var del: any = require('del');
-var config: any = require('./gulpfile.config')();
+var gulp = require('gulp');
+var tslint = require('gulp-tslint');
+var shell = require('gulp-shell');
+var gulpCopy = require('gulp-copy');
+var minifyHtml = require('gulp-minify-html');
+var runseq = require('run-sequence');
+var del = require('del');
+var config = require('./gulpfile.config')();
 
 gulp.task('buildrun', function(cb) {
    runseq('build', 'run', cb);
