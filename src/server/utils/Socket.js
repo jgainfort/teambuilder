@@ -11,6 +11,7 @@ var Socket = (function () {
         this.regions = new Regions();
         this.championTypes = new ChampionTypes();
         this.itemTypes = new ItemTypes();
+        this.debug = debug;
     }
     Socket.prototype.init = function (server, engine) {
         this.server = server;
@@ -21,10 +22,10 @@ var Socket = (function () {
     Socket.prototype.initListeners = function () {
         var self = this;
         self.socket.on('connection', function (socket) {
-            debug('User connected: ID = ' + socket.id);
+            self.debug('User connected: ID = ' + socket.id);
             socket.on('message', function (message) {
                 var msg = JSON.parse(message);
-                debug('Message received. Type: ' + msg.type);
+                self.debug('Message received. Type: ' + msg.type);
                 switch (msg.type) {
                     case self.championTypes.GET_ALL_CHAMPIONS:
                         champions.getAllChampions(msg.data.region, function (err, data) {

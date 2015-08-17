@@ -17,6 +17,14 @@ $npm install
 ```
 $tsd install
 ```
+* Install jspm dependencies
+```
+$jspm install
+```
+* Bundle jspm libraries into application
+```
+$jspm bundle app/app --inject --minify
+```
 * Compile typescript files to javascript
 ```
 $tsc -w

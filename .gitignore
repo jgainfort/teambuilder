@@ -1,6 +1,5 @@
 typings/
 node_modules/
-bower_components/
 .settings/
 utils/*.js
 routes/**/*.js
@@ -8,6 +7,10 @@ config/*.js
 bin/*.js
 src/**/*.js
 !src/client/config.js
+!src/client/app/libs/*.js
 app.js
 src/client/jspm_packages
 *.log
+dev/
+tmp/
+.DS_STORE

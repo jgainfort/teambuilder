@@ -16,11 +16,13 @@ class Socket {
     regions: Regions;
     championTypes: ChampionTypes;
     itemTypes: ItemTypes;
+    debug: debugModule.Debugger;
 
     constructor() {
         this.regions = new Regions();
         this.championTypes = new ChampionTypes();
         this.itemTypes = new ItemTypes();
+        this.debug = debug;
     }
 
     init(server: http.Server, engine: any): void {
@@ -33,11 +35,11 @@ class Socket {
     initListeners(): void {
         var self: any = this;
         self.socket.on('connection', function(socket: any): void {
-            debug('User connected: ID = ' + socket.id);
+            self.debug('User connected: ID = ' + socket.id);
 
             socket.on('message', function(message: string): void {
                 var msg: any = JSON.parse(message);
-                debug('Message received. Type: ' + msg.type);
+                self.debug('Message received. Type: ' + msg.type);
 
                 switch (msg.type) {
                     case self.championTypes.GET_ALL_CHAMPIONS:
