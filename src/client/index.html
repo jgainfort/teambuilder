@@ -9,7 +9,13 @@
     <h1>Welcome</h1>
     <lol-team-builder>Loading...</lol-team-builder>
     <script src="app/libs/engine.io.js"></script>
-    <script src="app.js"></script>
+    <script src="jspm_packages/system.js"></script>
+    <script src="config.js"></script>
+    <script src="build.js"></script>
+
+    <script>
+        System.import('app/app');
+    </script>
 </body>
 
 </html>

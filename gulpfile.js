@@ -12,7 +12,7 @@ gulp.task('buildrun', function(cb) {
 });
 
 gulp.task('build:dev', function(cb) {
-    runseq('tslint', 'clean:dev', 'compile', 'copy', cb)
+    runseq('tslint', 'clean:dev', 'compile', cb)
 });
 
 gulp.task('run', shell.task([
@@ -25,7 +25,7 @@ gulp.task('clean:dev', function(cb) {
     ], cb);
 });
 
-gulp.task('compile', ['compile:javascript', 'compile:html', 'compile:images', 'compile:styles'], function() {
+gulp.task('compile', ['compile:javascript'], function() {
 
 });
 
@@ -44,7 +44,7 @@ gulp.task('compile:javascript', function() {
             'jspm install'
         ]))
         .pipe(shell([
-            'jspm bundle-sfx ' + config.app + ' dev/client/app.js'
+            'jspm bundle ' + config.app + ' src/client/build.js'
         ]));
 });
 
