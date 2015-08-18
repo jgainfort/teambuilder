@@ -25,4 +25,4 @@ $tsc -w
 ```
 $gulp
 ```
-* Open browser and point address to http://localhost:3333 / http://locahost:3000
+* Open browser and point address to http://locahost:3000
