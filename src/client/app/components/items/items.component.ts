@@ -12,7 +12,7 @@ import {ItemService} from 'app/services/ItemService';
     directives: [NgFor]
 })
 
-export class ItemsComponent {
+export class Items {
     items: Array<Object>;
     itemSvc: ItemService;
     zone: NgZone;

@@ -12,8 +12,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var angular2_1 = require('angular2/angular2');
 var ChampionService_1 = require('app/services/ChampionService');
-var ChampionsComponent = (function () {
-    function ChampionsComponent(championSvc, zone) {
+var Champions = (function () {
+    function Champions(championSvc, zone) {
         var _this = this;
         this.onSetChampionsSuccess = function (data) {
             _this.zone.run(function () {
@@ -27,7 +27,7 @@ var ChampionsComponent = (function () {
         this.zone = zone;
         this.championSvc.setChampions(this.onSetChampionsSuccess, this.onSetChampionsError);
     }
-    ChampionsComponent = __decorate([
+    Champions = __decorate([
         angular2_1.Component({
             selector: 'champions',
             viewInjector: [ChampionService_1.ChampionService]
@@ -37,7 +37,7 @@ var ChampionsComponent = (function () {
             directives: [angular2_1.NgFor]
         }), 
         __metadata('design:paramtypes', [ChampionService_1.ChampionService, angular2_1.NgZone])
-    ], ChampionsComponent);
-    return ChampionsComponent;
+    ], Champions);
+    return Champions;
 })();
-exports.ChampionsComponent = ChampionsComponent;
+exports.Champions = Champions;

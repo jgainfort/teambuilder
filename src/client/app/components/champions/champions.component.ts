@@ -12,7 +12,7 @@ import {ChampionService} from 'app/services/ChampionService';
     directives: [NgFor]
 })
 
-export class ChampionsComponent {
+export class Champions {
     champions: Array<Object>;
     championSvc: ChampionService;
     zone: NgZone;

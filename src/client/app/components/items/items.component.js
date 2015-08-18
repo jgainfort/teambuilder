@@ -12,8 +12,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var angular2_1 = require('angular2/angular2');
 var ItemService_1 = require('app/services/ItemService');
-var ItemsComponent = (function () {
-    function ItemsComponent(itemSvc, zone) {
+var Items = (function () {
+    function Items(itemSvc, zone) {
         var _this = this;
         this.onSetItemsSuccess = function (data) {
             _this.zone.run(function () {
@@ -27,7 +27,7 @@ var ItemsComponent = (function () {
         this.zone = zone;
         this.itemSvc.setItems(this.onSetItemsSuccess, this.onSetItemsError);
     }
-    ItemsComponent = __decorate([
+    Items = __decorate([
         angular2_1.Component({
             selector: 'items',
             viewInjector: [ItemService_1.ItemService]
@@ -37,7 +37,7 @@ var ItemsComponent = (function () {
             directives: [angular2_1.NgFor]
         }), 
         __metadata('design:paramtypes', [ItemService_1.ItemService, angular2_1.NgZone])
-    ], ItemsComponent);
-    return ItemsComponent;
+    ], Items);
+    return Items;
 })();
-exports.ItemsComponent = ItemsComponent;
+exports.Items = Items;
