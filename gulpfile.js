@@ -8,10 +8,10 @@ var del = require('del');
 var config = require('./gulpfile.config')();
 
 gulp.task('buildrun', function(cb) {
-   runseq('build', 'run', cb);
+   runseq('build:dev', 'run', cb);
 });
 
-gulp.task('build', function(cb) {
+gulp.task('build:dev', function(cb) {
     runseq('tslint', 'clean:dev', 'compile', 'copy', cb)
 });
 

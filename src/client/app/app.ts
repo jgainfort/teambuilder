@@ -18,7 +18,6 @@ import {ItemsComponent} from 'app/components/items/items.component';
 })
 
 class TeamBuilderApp {
-
 }
 
 bootstrap(TeamBuilderApp);
