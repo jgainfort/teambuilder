@@ -17,20 +17,12 @@ $npm install
 ```
 $tsd install
 ```
-* Install jspm dependencies
-```
-$jspm install
-```
-* Bundle jspm libraries into application
-```
-$jspm bundle app/app --inject --minify
-```
-* Compile typescript files to javascript
+* Compile typesript files to javascript
 ```
 $tsc -w
 ```
-* Run express server. Express will use port number set on env.PORT or default is 3000. For console output register listeners through env.DEBUG. Example provided
+* Run Gulp
 ```
-$PORT=3333 DEBUG=teambuilder:* npm start
+$gulp
 ```
 * Open browser and point address to http://localhost:3333 / http://locahost:3000

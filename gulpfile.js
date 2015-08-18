@@ -11,7 +11,7 @@ gulp.task('buildrun', function(cb) {
    runseq('build:dev', 'run', cb);
 });
 
-gulp.task('build:dev', ['install'], function(cb) {
+gulp.task('build:dev', function(cb) {
     runseq('tslint', 'clean:dev', 'compile', 'copy', cb)
 });
 
@@ -23,14 +23,6 @@ gulp.task('clean:dev', function(cb) {
     del([
         'dev/**/*'
     ], cb);
-});
-
-gulp.task('install', function() {
-    return gulp.src(config.app, { read: false })
-        .pipe(shell([
-            'npm install',
-            'tsd install'
-        ]));
 });
 
 gulp.task('compile', ['compile:javascript', 'compile:html', 'compile:images', 'compile:styles'], function() {
