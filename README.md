@@ -19,7 +19,7 @@ $tsd install
 ```
 * Compile typesript files to javascript
 ```
-$tsc -w
+$tsc
 ```
 * Run Gulp
 ```
